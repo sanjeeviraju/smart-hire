@@ -37,47 +37,6 @@ Traditional hiring workflows involve hours of manual resume review, inconsistent
 
 ## Project Screenshots
 
-Use this section to showcase your project in documentation, demos, and portfolio materials.
-
-### Suggested screenshot checklist
-- Landing/Login page
-- HR dashboard overview
-- Job Description creation form
-- Candidate upload and screening results
-- Interview page (candidate side)
-- Interview evaluation/results page
-
-### Add your images here
-
-Place all images inside a folder named `docs/images` and use the examples below.
-
-> Recommended naming: `01-login.png`, `02-dashboard.png`, `03-jd-create.png`, etc.
-
-#### Example gallery (replace with your real screenshots)
-
-![Login / Landing](docs/images/01-login.png)
-*Figure 1: Login and onboarding screen*
-
-![HR Dashboard](docs/images/02-dashboard.png)
-*Figure 2: HR dashboard with hiring metrics and activity feed*
-
-![Candidate Screening](docs/images/03-screening-results.png)
-*Figure 3: Candidate screening output with score breakdown*
-
-![Interview Experience](docs/images/04-interview-page.png)
-*Figure 4: Candidate interview page with proctoring constraints*
-
-![Interview Results](docs/images/05-interview-results.png)
-*Figure 5: Final interview analysis and ranking view*
-
-### Optional: side-by-side comparison block
-
-```md
-| Dashboard | Screening |
-|---|---|
-| ![Dashboard](docs/images/02-dashboard.png) | ![Screening](docs/images/03-screening-results.png) |
-```
-
 ---
 
 ## Features
