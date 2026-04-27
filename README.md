@@ -70,80 +70,80 @@ Traditional hiring workflows involve hours of manual resume review, inconsistent
 - Score breakdowns per candidate
 - Bulk actions: shortlist, delete, export to CSV
 
-### Interview System
-- Secure tokenised interview links delivered via SendGrid
-- Link expiry enforced server-side
-- Browser-based interview with:
-  - Email verification before start
-  - Fullscreen, camera, microphone, and screen-share enforcement
-  - Timed question flow
-  - Audio/video answer recording and upload to Supabase
-- Real-time proctoring:
-  - Face presence detection via YOLO
-  - Suspicious-frame flagging with configurable warning limit
-  - Automatic session termination on repeated violations
+# AI-Powered Recruitment Platform
 
-### Evaluation & Results
-- Gemini-first evaluation (transcription + analysis) when API key is configured
-- Local scoring fallback when Gemini is unavailable
-- Per-question scoring with overall interview result
-- HR interview review page with video playback and score breakdown
+An opinionated, minimal README for the project — concise setup, required env, and preserved screenshots.
+
+## One-liner
+
+AI-assisted hiring: resume ingestion, automated screening, proctored interviews, and explainable evaluations.
+
+## Screenshots
+
+<!-- preserved project screenshots: arranged compactly -->
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/421ac193-5b60-4c72-a9df-1d2a2c47f4ac" width="45%" style="margin:0 1%" />
+  <img src="https://github.com/user-attachments/assets/89e9fcce-8673-4185-a148-38b741cb57fc" width="45%" style="margin:0 1%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f40d0a31-33a6-4739-a347-c657a9314bd9" width="45%" style="margin:8px 1%" />
+  <img src="https://github.com/user-attachments/assets/9ef57c09-01fa-4e7a-83f4-a20ddca6fc68" width="45%" style="margin:8px 1%" />
+</p>
+
+## Quick start (local)
+
+Prereqs: Python 3.10+, Node 18+, Postgres (or Docker), optional Redis for Celery.
+
+1) Backend
+
+```powershell
+cd backend
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+alembic upgrade head
+python run_dev.py
+```
+
+API: http://localhost:8000 (or see `run_dev.py` for configured port)
+
+2) Frontend
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend: http://localhost:5173
+
+## Required environment variables (minimum)
+
+- `DATABASE_URL` — Postgres connection string
+- `FRONTEND_URL` — frontend origin (e.g. http://localhost:5173)
+- `SENDGRID_API_KEY` or SMTP credentials — for interview invites
+- `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` — storage for resumes/videos
+- `SECRET_KEY` — app signing secret (rotate regularly)
+
+See `backend/.env.example` for a fuller list used during development.
+
+## Repo layout (high level)
+
+- `backend/` — FastAPI app, migrations, services, and tasks
+- `frontend/` — React + Vite SPA
+- `alembic/` — DB migrations
+
+## About
+
+This project automates resume screening and interview evaluation with configurable proctoring and explainable scoring. Use it as a foundation for research or deployment; disable heavy ML components if you want a lightweight demo.
+
+## License
+
+See `LICENSE` or contact the owner for commercial use.
 
 ---
 
-## Tech Stack
-
-### Frontend
-| Library | Purpose |
-|---|---|
-| React 18 | UI framework |
-| TypeScript 5.7 | Type safety |
-| Vite 5.4 | Build tool and dev server |
-| React Router 6 | Client-side routing |
-| Axios | HTTP client |
-| Zustand | Global auth state |
-| Tailwind CSS 3.4 | Styling |
-| React Hook Form + Zod | Form handling and validation |
-
-### Backend
-| Library | Purpose |
-|---|---|
-| FastAPI 0.115 | REST API framework |
-| SQLAlchemy 2.0 | ORM |
-| Alembic 1.14 | Database migrations |
-| PostgreSQL | Relational database |
-| python-jose + passlib | JWT auth and password hashing |
-| SendGrid | Interview invitation emails |
-| Supabase Python client | File storage (resumes, interview media) |
-| Celery 5.4 + Redis | Async task queue (wired, optional) |
-
-### AI / ML / CV
-| Library | Purpose |
-|---|---|
-| Sentence Transformers 3.4 | Semantic resume-to-JD scoring |
-| spaCy 3.7+ (`en_core_web_trf`) | Named entity extraction |
-| LightOn OCR (`LightOnOCR-2-1B`) | OCR fallback for scanned PDFs |
-| Ultralytics YOLO 8.3 | Face detection for proctoring |
-| OpenCV (headless) 4.10 | Frame analysis |
-| Ollama | Optional local LLM for resume field extraction |
-| Google Gemini API | Cloud transcription and interview evaluation |
-
----
-
-## Architecture
-
-### Frontend Routes
-```
-/                         HR landing and login
-/register                 HR registration
-/dashboard                Protected HR dashboard
-/interview/:token         Candidate interview session
-/interview/invalid        Expired or invalid link page
-/interview/complete       Post-interview confirmation
-```
-
-### Backend Route Groups
-```
+If you'd like, I can commit this change and push to the `origin` remote — should I proceed?
 /api/v1/auth              Authentication (register, login, me)
 /api/v1/jd                Job description CRUD
 /api/v1/jd/{jd_id}/candidates   Candidate upload, listing, screening, export
