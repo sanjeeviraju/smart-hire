@@ -373,7 +373,7 @@ SECRET_KEY=replace-this-with-a-long-random-secret
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=60
 
-SUPABASE_URL=https://zerhtfovhukdafswhsmb.supabase.co
+SUPABASE_URL=https:[Supabase URL]
 SUPABASE_SERVICE_KEY=your-service-role-key
 SUPABASE_BUCKET_RESUMES=resumes
 SUPABASE_BUCKET_INTERVIEWS=interviews
