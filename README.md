@@ -37,7 +37,15 @@ Traditional hiring workflows involve hours of manual resume review, inconsistent
 
 ## Project Screenshots
 
-Add screenshots here to showcase key workflows such as login, dashboard, candidate screening, interview flow, and final evaluation results.
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/421ac193-5b60-4c72-a9df-1d2a2c47f4ac" width="48%" style="margin-right:2%;" />
+  <img src="https://github.com/user-attachments/assets/89e9fcce-8673-4185-a148-38b741cb57fc" width="48%" />
+</p>
+
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/f40d0a31-33a6-4739-a347-c657a9314bd9" width="48%" style="margin-right:2%;" />
+  <img src="https://github.com/user-attachments/assets/9ef57c09-01fa-4e7a-83f4-a20ddca6fc68" width="48%" />
+</p>
 
 ---
 
